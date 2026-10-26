@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Prestasi | SD Islam Al-Hikmah</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a class="brand" href="index.html">
+            <img src="images/logo_sekolah.png" alt="Logo SD Islam Al-Hikmah" class="logo-image">
+
+            <span class="brand-text">
+                <strong>SD Islam Al-Hikmah</strong>
+                <small>Unggul, Berprestasi, Berakhlak</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a class="active" href="prestasi.html">Prestasi</a>
+            <a href="tambah-prestasi.html">Tambah Prestasi</a>
+        </nav>
+    </header>
+
+    <main class="container page-container">
+
+        <section class="page-title">
+            <p class="eyebrow">PENCAPAIAN SEKOLAH</p>
+            <h1>Daftar Prestasi Sekolah</h1>
+            <p>
+                Temukan berbagai pencapaian dan penghargaan
+                siswa SD Islam Al-Hikmah.
+            </p>
+        </section>
+
+        <section class="filter-panel">
+
+            <label for="filterTingkat">
+                Tingkat Prestasi
+                <select id="filterTingkat">
+                    <option value="">Semua Tingkat</option>
+                </select>
+            </label>
+
+            <label for="filterTahun">
+                Tahun
+                <select id="filterTahun">
+                    <option value="">Semua Tahun</option>
+                </select>
+            </label>
+
+            <button class="button" id="resetFilter" type="button">
+                Reset Filter
+            </button>
+
+        </section>
+
+        <div class="results-line">
+            <span id="jumlahHasil">0 prestasi</span>
+
+            <a class="text-link" href="tambah-prestasi.html">
+                + Tambah Prestasi
+            </a>
+        </div>
+
+        <div id="daftarPrestasi" class="prestasi-grid">
+            <!-- Daftar prestasi ditampilkan oleh app.js -->
+        </div>
+
+        <p id="pesanKosong" class="empty-state" hidden>
+            Belum ada data prestasi. Silakan tambahkan prestasi terlebih dahulu.
+        </p>
+
+    </main>
+
+    <footer class="footer">
+        © 2026 SD Islam Al-Hikmah |
+        Website Informasi Prestasi Sekolah
+    </footer>
+
+</body>
+</html>
+```

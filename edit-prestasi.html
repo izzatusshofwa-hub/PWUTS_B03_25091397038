@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Prestasi | SD Islam Al-Hikmah</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+
+    <style>
+        /* Perbaikan tampilan formulir edit */
+        .form-card label {
+            display: block;
+            text-align: left;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Tanda bintang sejajar dengan label */
+        .form-card label .required {
+            display: inline !important;
+            position: static !important;
+            color: #e53935;
+            margin-left: 3px;
+            padding: 0;
+            font-size: inherit;
+            line-height: inherit;
+            vertical-align: baseline;
+        }
+
+        /* Kolom input berada di bawah label */
+        .form-card label input:not([type="checkbox"]),
+        .form-card label select,
+        .form-card label textarea {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+            box-sizing: border-box;
+        }
+
+        /* Tata letak tingkat dan tahun */
+        .form-card .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        /* Gambar prestasi saat ini */
+        .current-image {
+            margin-bottom: 20px;
+        }
+
+        .current-image .field-label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .current-image img,
+        .preview-wrap img {
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        .help-text {
+            display: block;
+            margin-top: 8px;
+            font-weight: normal;
+            line-height: 1.5;
+        }
+
+        /* Tampilan HP */
+        @media (max-width: 600px) {
+            .form-card .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a class="brand" href="index.html">
+            <img src="images/logo_sekolah.png" alt="Logo SD Islam Al-Hikmah" class="logo-image">
+
+            <span class="brand-text">
+                <strong>SD Islam Al-Hikmah</strong>
+                <small>Unggul, Berprestasi, Berakhlak</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a class="active" href="prestasi.html">Prestasi</a>
+            <a href="tambah-prestasi.html">Tambah Prestasi</a>
+        </nav>
+    </header>
+
+    <main class="container form-container">
+
+        <section class="page-title compact-title">
+            <p class="eyebrow">PERBARUI DATA</p>
+            <h1>Edit Prestasi</h1>
+            <p>Ubah informasi prestasi yang sudah tersimpan.</p>
+        </section>
+
+        <form id="formEditPrestasi" class="form-card">
+
+            <input type="hidden" id="idPrestasi">
+
+            <label for="namaPrestasi">
+                Nama Prestasi <span class="required">*</span>
+                <input
+                    id="namaPrestasi"
+                    name="namaPrestasi"
+                    type="text"
+                    maxlength="120"
+                    placeholder="Masukkan nama prestasi"
+                    required
+                >
+            </label>
+
+            <div class="form-row">
+
+                <label for="tingkat">
+                    Tingkat Prestasi <span class="required">*</span>
+
+                    <select id="tingkat" name="tingkat" required>
+                        <option value="">Pilih tingkat</option>
+                        <option value="Sekolah">Sekolah</option>
+                        <option value="Kecamatan">Kecamatan</option>
+                        <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                        <option value="Provinsi">Provinsi</option>
+                        <option value="Nasional">Nasional</option>
+                        <option value="Internasional">Internasional</option>
+                    </select>
+                </label>
+
+                <label for="tahun">
+                    Tahun <span class="required">*</span>
+
+                    <input
+                        id="tahun"
+                        name="tahun"
+                        type="number"
+                        min="2000"
+                        max="2100"
+                        required
+                    >
+                </label>
+
+            </div>
+
+            <label for="deskripsi">
+                Deskripsi <span class="required">*</span>
+
+                <textarea
+                    id="deskripsi"
+                    name="deskripsi"
+                    rows="4"
+                    maxlength="1000"
+                    placeholder="Jelaskan pencapaian tersebut..."
+                    required
+                ></textarea>
+            </label>
+
+            <div id="gambarSaatIniWrap" class="current-image" hidden>
+                <span class="field-label">Gambar Saat Ini</span>
+                <img
+                    id="gambarSaatIni"
+                    alt="Gambar prestasi saat ini"
+                >
+            </div>
+
+            <label for="gambar">
+                Pilih Gambar Baru (opsional)
+
+                <input
+                    id="gambar"
+                    name="gambar"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+
+                <small class="help-text">
+                    Kosongkan jika ingin mempertahankan gambar lama.
+                    Format JPG, PNG, atau WEBP. Maksimal 2 MB.
+                </small>
+            </label>
+
+            <div id="previewWrap" class="preview-wrap" hidden>
+                <img
+                    id="previewGambar"
+                    alt="Pratinjau gambar baru"
+                >
+            </div>
+
+            <div class="form-actions">
+                <button class="button" type="submit">
+                    Simpan Perubahan
+                </button>
+
+                <a class="button button-outline" href="prestasi.html">
+                    Batal
+                </a>
+            </div>
+
+            <p
+                class="form-message"
+                id="formMessage"
+                role="status"
+            ></p>
+
+        </form>
+    </main>
+
+    <footer class="footer">
+        © 2026 SD Islam Al-Hikmah |
+        Website Informasi Prestasi Sekolah
+    </footer>
+
+</body>
+
+</html>

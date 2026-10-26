@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda | SD Islam Al-Hikmah</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <a class="brand" href="index.html">
+            <img src="images/logo_sekolah.png" alt="Logo SD Islam Al-Hikmah" class="logo-image">
+
+            <span class="brand-text">
+                <strong>SD Islam Al-Hikmah</strong>
+                <small>Unggul, Berprestasi, Berakhlak</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a class="active" href="index.html">Beranda</a>
+            <a href="prestasi.html">Prestasi</a>
+            <a href="tambah-prestasi.html">Tambah Prestasi</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="hero">
+            <p class="eyebrow">SELAMAT DATANG</p>
+
+            <h1>Website Prestasi Sekolah</h1>
+
+            <p>
+                Informasi pencapaian dan penghargaan siswa
+                SD Islam Al-Hikmah.
+            </p>
+
+            <div class="hero-actions">
+                <a href="prestasi.html" class="button">
+                    Lihat Prestasi
+                </a>
+
+                <a href="tambah-prestasi.html"
+                   class="button button-outline">
+                    Tambah Prestasi
+                </a>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+
+            <article class="stat-card">
+                <span class="stat-label">Total Prestasi</span>
+                <strong id="totalPrestasi">0</strong>
+                <span class="muted">Jumlah data prestasi</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">Tingkat Prestasi</span>
+                <strong id="totalTingkat">0</strong>
+                <span class="muted">Kategori tingkat berbeda</span>
+            </article>
+
+            <article class="stat-card">
+                <span class="stat-label">Prestasi Terbaru</span>
+                <strong id="tahunTerbaru">—</strong>
+                <span class="muted">Tahun pencapaian terbaru</span>
+            </article>
+
+        </section>
+
+        <section class="section-heading">
+            <div>
+                <p class="eyebrow">PENCAPAIAN SEKOLAH</p>
+                <h2>Prestasi Terbaru</h2>
+            </div>
+
+            <a href="prestasi.html" class="text-link">
+                Lihat semua →
+            </a>
+        </section>
+
+        <div id="recentPrestasi" class="prestasi-grid">
+            <!-- Data prestasi ditampilkan melalui JavaScript -->
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        © 2026 SD Islam Al-Hikmah |
+        Website Informasi Prestasi Sekolah
+    </footer>
+
+</body>
+</html>

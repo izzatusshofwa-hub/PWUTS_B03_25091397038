@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tambah Prestasi | SD Islam Al-Hikmah</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+
+    <style>
+        .form-card label {
+            display: block;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .form-card label .required {
+            display: inline;
+            color: #e53935;
+            margin-left: 3px;
+            font-weight: bold;
+            vertical-align: baseline;
+        }
+
+        .form-card label input:not([type="checkbox"]),
+        .form-card label select,
+        .form-card label textarea {
+            display: block;
+            width: 100%;
+            margin-top: 12px;
+        }
+
+        .form-card .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-card .help-text {
+            display: block;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
+        @media (max-width: 600px) {
+            .form-card .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a class="brand" href="index.html">
+            <img src="images/logo_sekolah.png" alt="Logo SD Islam Al-Hikmah" class="logo-image">
+
+            <span class="brand-text">
+                <strong>SD Islam Al-Hikmah</strong>
+                <small>Unggul, Berprestasi, Berakhlak</small>
+            </span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="prestasi.html">Prestasi</a>
+            <a class="active" href="tambah-prestasi.html">
+                Tambah Prestasi
+            </a>
+        </nav>
+    </header>
+
+    <main class="container form-container">
+
+        <section class="page-title compact-title">
+            <p class="eyebrow">FORMULIR DATA</p>
+            <h1>Tambah Prestasi</h1>
+            <p>Masukkan informasi pencapaian siswa.</p>
+        </section>
+
+        <form id="formPrestasi" class="form-card">
+
+            <label for="namaPrestasi">
+                Nama Prestasi <span class="required">*</span>
+                <input
+                    id="namaPrestasi"
+                    name="namaPrestasi"
+                    type="text"
+                    maxlength="120"
+                    placeholder="Contoh: Juara Olimpiade Matematika"
+                    required
+                >
+            </label>
+
+            <div class="form-row">
+
+                <label for="tingkat">
+                    Tingkat Prestasi <span class="required">*</span>
+                    <select id="tingkat" name="tingkat" required>
+                        <option value="">Pilih tingkat</option>
+                        <option value="Sekolah">Sekolah</option>
+                        <option value="Kecamatan">Kecamatan</option>
+                        <option value="Kabupaten/Kota">Kabupaten/Kota</option>
+                        <option value="Provinsi">Provinsi</option>
+                        <option value="Nasional">Nasional</option>
+                        <option value="Internasional">Internasional</option>
+                    </select>
+                </label>
+
+                <label for="tahun">
+                    Tahun <span class="required">*</span>
+                    <input
+                        id="tahun"
+                        name="tahun"
+                        type="number"
+                        min="2000"
+                        max="2100"
+                        value="2026"
+                        required
+                    >
+                </label>
+
+            </div>
+
+            <label for="deskripsi">
+                Deskripsi <span class="required">*</span>
+                <textarea
+                    id="deskripsi"
+                    name="deskripsi"
+                    rows="4"
+                    maxlength="1000"
+                    placeholder="Jelaskan pencapaian tersebut..."
+                    required
+                ></textarea>
+            </label>
+
+            <label for="gambar">
+                Gambar Prestasi (opsional)
+                <input
+                    id="gambar"
+                    name="gambar"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                >
+                <small class="help-text">
+                    Format JPG, PNG, atau WEBP. Maksimal 2 MB.
+                </small>
+            </label>
+
+            <div id="previewWrap" class="preview-wrap" hidden>
+                <img
+                    id="previewGambar"
+                    alt="Pratinjau gambar prestasi"
+                >
+            </div>
+
+            <div class="form-actions">
+                <button class="button" type="submit">
+                    Simpan Prestasi
+                </button>
+
+                <a class="button button-outline" href="prestasi.html">
+                    Batal
+                </a>
+            </div>
+
+            <p
+                class="form-message"
+                id="formMessage"
+                role="status"
+            ></p>
+
+        </form>
+    </main>
+
+    <footer class="footer">
+        © 2026 SD Islam Al-Hikmah |
+        Website Informasi Prestasi Sekolah
+    </footer>
+
+</body>
+</html>
